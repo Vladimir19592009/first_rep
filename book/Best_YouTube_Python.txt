@@ -1,0 +1,9 @@
+Git и GitHub Курс Для Новичков
+https://www.youtube.com/watch?v=zZBiln_2FhM
+
+Основы командной разработки git в Visual Studio Code
+https://www.youtube.com/watch?v=9e5OSBCCvvU
+
+ПОЛНЫЙ КУРС ПО НАСТРОЙКЕ VISUAL STUDIO CODE ДЛЯ ПРОГРАММИРОВАНИЯ НА PYTHON (время 8-50)
+https://www.youtube.com/watch?v=F69kR3SVQtQ
+https://github.com/hiropuko/VSCodeSettings.JSON
