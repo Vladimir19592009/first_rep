@@ -107,7 +107,5 @@ name = 'Paul McCartney'
 department = 'Ofice'
 position = 'Singer'
 print(f'Имя сотрудника: {name},\n' +
-      f'Отдел: {department},\n' +
-      f'Должность: {position}')
-
-
+      f'Отдел:\t\t{department},\n' +
+      f'Должность:\t{position}')
