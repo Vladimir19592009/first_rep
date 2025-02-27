@@ -36,3 +36,5 @@ discount = original_price * 0.2
 sale_price = original_price - discount
 print(sale_price)
 '''
+
+
