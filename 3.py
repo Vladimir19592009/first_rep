@@ -10,7 +10,7 @@ last_name = input('Введите свою фамилию: ')
 # Приветствие пользователю
 print('Привет, ', first_name, last_name, '!')
 '''
-# Преобразование строкового литерала в число, если представлено число в виде ст. лит.
+# Преобразование строкового литерала в число, если представлено число в виде стр. лит.
 '''
 string_value = input ('Сколько часов вы отработали за неделю?: ')
 hours = int(string_value)
@@ -36,5 +36,3 @@ discount = original_price * 0.2
 sale_price = original_price - discount
 print(sale_price)
 '''
-
-
