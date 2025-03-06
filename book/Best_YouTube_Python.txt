@@ -7,3 +7,6 @@ https://www.youtube.com/watch?v=9e5OSBCCvvU
 ПОЛНЫЙ КУРС ПО НАСТРОЙКЕ VISUAL STUDIO CODE ДЛЯ ПРОГРАММИРОВАНИЯ НА PYTHON (время 8-50)
 https://www.youtube.com/watch?v=F69kR3SVQtQ
 https://github.com/hiropuko/VSCodeSettings.JSON
+
+# СТРОКИ (Методы строк)
+# https://pylot.me/article/ed0-shpargalka-po-strokam-str-v-python/#Metody-strok
