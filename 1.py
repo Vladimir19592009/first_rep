@@ -226,60 +226,26 @@ for i in test_scores:
 '''
 
 # -----------------------------------------------------------------------------
+# B Python можно создать усечённую копию словаря по ключам с помощью метода включения в словарь. Это можно сделать с помощью генератора словарей. Вот пример, как это можно реализовать:
 '''
-# Создаем пустой словарь  
-dictionary = {}  
+# Исходный словарь  
+original_dict = {  
+    'a': 1,  
+    'b': 2,  
+    'c': 3,  
+    'd': 4  
+}  
 
-def add_translation(english_word, russian_translation):  
-    """Добавляет перевод в словарь."""  
-    dictionary[english_word] = russian_translation  
-    print(f'Перевод добавлен: "{english_word}" -> "{russian_translation}"')  
+# Ключи, которые вы хотите включить в новую копию  
+keys_to_include = ['a', 'c']  
 
-def edit_translation(english_word, new_translation):  
-    """Редактирует перевод в словаре."""  
-    if english_word in dictionary:  
-        dictionary[english_word] = new_translation  
-        print(f'Перевод обновлен: "{english_word}" -> "{new_translation}"')  
-    else:  
-        print("Слово не найдено в словаре.")  
+# Создание усечённой копии словаря  
+filtered_dict = {key: original_dict[key] for key in keys_to_include if key in original_dict}  
 
-def display_dictionary():  
-    """Выводит все слова и переводы из словаря."""  
-    if not dictionary:  
-        print("Словарь пуст.")  
-    else:  
-        for word, translation in dictionary.items():  
-            print(f'"{word}" -> "{translation}"')  
-
-def main():  
-    while True:  
-        print("\nMeню:")  
-        print("1. Добавить перевод")  
-        print("2. Редактировать перевод")  
-        print("3. Показать словарь")  
-        print("4. Выйти")  
-        
-        choice = input("Выберите действие (1-4): ")  
-        
-        if choice == '1':  
-            english_word = input("Введите английское слово/выражение: ")  
-            russian_translation = input("Введите перевод: ")  
-            add_translation(english_word, russian_translation)  
-        elif choice == '2':  
-            english_word = input("Введите английское слово для редактирования: ")  
-            new_translation = input("Введите новый перевод: ")  
-            edit_translation(english_word, new_translation)  
-        elif choice == '3':  
-            display_dictionary()  
-        elif choice == '4':  
-            print("Выход из программы.")  
-            break  
-        else:  
-            print("Неверный выбор. Пожалуйста, попробуйте снова.")  
-
-if __name__ == "__main__":  
-    main()
+print(filtered_dict)  # Вывод: {'a': 1, 'c': 3}  
 '''
+# В этом примере filtered_dict будет содержать только те ключи, которые указаны в keys_to_include. Если нужные ключи отсутствуют в исходном словаре, они просто игнорируются.
+
 # --------------------------------------------------------------------------------
 
 # Использование условий if с операциями включения в словарь:
