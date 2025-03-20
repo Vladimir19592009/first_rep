@@ -114,9 +114,9 @@ print(f'***{name3:^20}***')
 # НАПРИМЕР:     print(f'{nubber^10,.2f}')
 
 # 				Конкатенация f-строк
-name = 'Paul McCartney'
-department = 'Ofice'
-position = 'Singer'
-print(f'Имя сотрудника: {name},\n' +
-      f'Отдел:\t\t{department},\n' +
-      f'Должность:\t{position}')
+# name = 'Paul McCartney'
+# department = 'Ofice'
+# position = 'Singer'
+# print(f'Имя сотрудника: {name},\n' +
+#       f'Отдел:\t\t{department},\n' +
+#       f'Должность:\t{position}')
