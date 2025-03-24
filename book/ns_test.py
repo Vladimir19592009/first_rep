@@ -72,31 +72,56 @@
 
 # Раздел: Введение в ООП.
 
-class Animal:
-    name = 'No Name'
-    age = 0
-    fed = False
+# class Animal:
+#     name = 'No Name'
+#     age = 0
+#     fed = False
 
-    count = 0
-    lst = []
+#     count = 0
+#     lst = []
 
-    def __init__(self, name, age, fed):
-        self.name = name
-        self.age = age
-        self.fed = fed
-        Animal.count += 1             # ведём подсчёт животных
-        Animal.lst.append(self.name)  # добавляем имена в список lst[]
+#     def __init__(self, name, age, fed):
+#         self.name = name
+#         self.age = age
+#         self.fed = fed
+#         Animal.count += 1             # ведём подсчёт животных
+#         Animal.lst.append(self.name)  # добавляем имена в список lst[]
 
-    def feed(self):
-        if not self.fed:
-            self.fed = True
+#     def feed(self):
+#         if not self.fed:
+#             self.fed = True
 
 
-cat1 = Animal('Barsic', 3, True)
-cat2 = Animal('Gopen', 2, False)
+# cat1 = Animal('Barsic', 3, True)
+# cat2 = Animal('Gopen', 2, False)
 
-cat2.feed()     # покормим cat2, ведь он изначально не кормлен (False)
-print(cat2.fed) # принт показывает, что теперь пакормлен
+# cat2.feed()     # покормим cat2, ведь он изначально не кормлен (False)
+# print(cat2.fed) # принт показывает, что теперь пакормлен
 
-print(Animal.count)
-print(Animal.lst)
+# print(Animal.count)
+# print(Animal.lst)
+
+# --------------------------------------------------------------------------------
+
+# Задание 1
+# Напишите функцию для вывода треугольника. Функция принимает два аргумента – size (размер сторон треугольника) и symb (символ, используемый для заполнения треугольника).
+
+# def drow_triangl(sise, symb):
+#     for i in range(1, sise + 1):
+#         print(symb * min(i, sise + 1 - i))
+        
+        
+# sise = int(input('Введите размер: '))
+# symb = input('Введите символ: ')
+# drow_triangl(sise, symb)
+
+# Задание 2
+# Напишите функцию, которая принимает произвольное количество целых чисел, и возвращает среднее арифметическое без использования встроенных функции sum() и len().
+
+def arithmetic_average(args):
+    return
+
+
+
+args = [5, 4, 3, 9, 7, 10]
+arithmetic_average(args)

@@ -467,3 +467,23 @@
 
 # operation = select_operation(3)  # operation = multiply
 # print(operation(10, 6))  # 60
+
+
+# def minimal(l):
+#     min_number = l[0]
+#     for el in l:
+#         if el < min_number:
+#             min_number = el
+#     return min_number
+    
+
+# num1 = [2, 9, 4, 6, 3, 1]
+# min1 = minimal(num1)
+# print(min1)
+# num2 = [6, 5, 2, 1.1, 10, 9, 0.5]
+# min2 = minimal(num2)
+# print(min2)
+# if min1 < min2:
+#     print(f'Absolutly minimum:  {min1}')
+# else:
+#     print(f'Absolutly minimum:  {min2}')
