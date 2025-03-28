@@ -209,4 +209,410 @@
 # Когда вы запустите эту программу, она выведет все совершенные числа в диапазоне от 1 до 1000. Совершенные числа в этом диапазоне: **6, 28, 496**.
 # -------------------------------------------------------------------------------
 
+# my_set = {5, 4, 8, 9, 1}
+# print(my_set)
+# my_set.add(38)
+# print(my_set)
 
+# my_other_set = {9, 4, 1, 35, 10}
+# print(my_other_set)
+
+# new_set = (my_set.intersection(my_other_set))
+# print(new_set)
+# new_set = list(new_set)
+# print(new_set)
+
+# my_range = range(5)
+
+# print(dir(my_range))
+
+# print(my_range)
+# print(type(my_range))
+# print(my_range[-1])
+
+# for n in my_range:
+#     print(n, end=" ")
+
+
+# ВСТРОЕННАЯ ФУНКЦИЯ zip:
+
+# fruits = ['apple', 'banana', 'lime']
+# nums = [100, 70, 50]
+# fruit_num_zip = zip(fruits, nums)
+# print(fruit_num_zip)
+# # <zip object at 0x000001B6FD781B40>
+# # полученный объект легко можно конвертировать в список кортежей и т.о произвеси слияние 2-х списков:
+# можно и трёх списков (кортежи будут состоять из 3-х элементов)
+
+# fruit_num_list = list(fruit_num_zip)
+# print(fruit_num_list)
+# # [('apple', 100), ('banana', 70), ('lime', 50)]
+
+# Большее количество  элементов в одном из списков игнорируется Python.
+
+
+# КОНВЕРТАЦИЯ ZIP В DICT: (только из 2-х сисков)
+
+# fruits = ['apple', 'banana', 'lime'] # первая последовательность для ключей
+# nums = [100, 70, 50]                 # вторая последовательность для значений
+# fruit_num_zip = zip(fruits, nums)
+# print(fruit_num_zip)
+# # <zip object at 0x000001B6FD781B40>
+
+# fruit_num_dict = dict(fruit_num_zip)
+# print(fruit_num_dict)
+# # {'apple': 100, 'banana': 70, 'lime': 50}
+# -------------------------------------------------------------
+
+# def increase_person_age(person):
+#     person_copy = person.copy()
+#     person_copy['age'] += 1
+#     return person_copy
+
+# person_one = {'name': 'Bob', 'age': 21}
+# print(id(person_one))
+
+# new_person = increase_person_age(person_one)
+# print(new_person['age'])  # 22
+# print(person_one['age'])  # 21
+# --------------------------------------------------------------
+
+# Написать ф-ию, которая объединяет два списка в словарь посредством ф-ии zip
+
+# def merge_list_to_dict(a_lst, b_lst):
+#     return dict(zip(a_lst, b_lst))
+
+# a_lst = ['Bob', 'Alice', 'Tom', 'Jack']
+# b_lst = [25, 23, 22, 24]
+
+# my_dict = merge_list_to_dict(a_lst, b_lst)
+# print(my_dict)
+# # {'Bob': 25, 'Alice': 23, 'Tom': 22, 'Jack': 24}
+
+
+# def sum_num(*args):
+#     # посмотрим что это такое?:
+#     print(args)         # (2, 3, 7)
+#     print(type(args))   # <class 'tuple'>
+#     print(args[0])      # 2
+#     return sum(args)    # 12
+
+# print(sum_num(2, 3, 7))
+
+
+# ПОЗИЦИОННЫЕ АРГУМЕНТЫ:
+
+# def get_posts_info(name, posts_qty):
+#     info = f'{name} wrote {posts_qty} posts'
+#     return info
+
+# info = get_posts_info('Vladimir', 25)
+# print(info)
+# # Vladimir wrote 25 posts
+
+
+# АРГУМЕНТЫ С КЛЮЧЕВЫМИ СЛОВАМИ:
+
+# def get_posts_info(name, posts_qty):
+#     info = f'{name} wrote {posts_qty} posts'
+#     return info
+
+# info = get_posts_info(name='Vladimir', posts_qty=25)  # Порядок аргументов не важен (присутствуют ключевые слова)
+# print(info)
+# # Vladimir wrote 25 posts
+
+
+# ОБЪЕДИНЕНИЕ АРГУМЕНТОВ В СЛОВАРЬ:
+
+# ---------------------------------------------------------------------------
+# def get_posts_info(**person):
+#     print(person)
+#     info = (f'{person['name']} wrote'
+#             f'{person['posts_qty']} posts')
+#     return info
+
+# info = get_posts_info(name='Vladimir', posts_qty=25)
+# print(info)
+# # Vladimir wrote25 posts
+# ----------------------------------------------------------------------------
+
+# def update_car_info(**car):
+#     car['is_available'] = True
+#     return car
+
+# print(update_car_info(brand='BMV', price=100000))
+# # {'brand': 'BMV', 'price': 100000, 'is_available': True}
+# ----------------------------------------------------------------------------
+
+# ЗНАЧЕНИЯ ПАРАМЕТРОВ Ф-ИИ ПО УМОЛЧАНИЮ (пример)
+
+# from datetime import date
+
+
+# def get_weekday():     # возвращает день недели (например: вториник)
+#     return date.today().strftime('%A')
+
+
+# def create_new_post(post, weekday=get_weekday()):
+#     post_copy = post.copy()   # копию создаём для сохранения внешних аргументов(initial_post) в неприкосновенности
+
+#     # ниже сздаём и вставляем в словарь новую пару (ключ: значение)
+#     post_copy['created_on weekday'] = weekday
+#     return post_copy
+
+
+# initial_post = {'id': 243,
+#                 'author': 'Vladimir',
+#                 }
+
+# post_with_weekday = create_new_post(initial_post)
+# print(post_with_weekday)
+# # {'id': 243, 'author': 'Vladimir', 'created_on weekday': 'Thursday'}
+# print(initial_post)
+
+
+# КОЛБЭК ФУНКЦИИ  (передается как аргумент в другую ф-цию и там вызывается)
+
+# def print_number_info(num):
+#     if num % 2 == 0:
+#         print("Entered nuber is even")
+#     else:
+#         print("Entered nuber is odd")
+
+
+# def process_nuber(num, callback_fn):
+#     callback_fn(num)
+
+
+# entered_num = int(input("Enter any number: "))  # Enter any number: 46
+# process_nuber(entered_num, print_number_info)
+# # Entered nuber is even
+
+# В вызывающей ф-ии process_nuber в качестве второго аргумента можем применить другой аргумент который будет использован другой ф-ией. Например:
+
+# def print_number_info(num):
+#     if num % 2 == 0:
+#         print("Entered nuber is even")
+#     else:
+#         print("Entered nuber is odd")
+
+
+# def print_square_num(num):
+#     print('Square of the num is', num * num)
+
+
+# def process_nuber(num, callback_fn):
+#     callback_fn(num)
+
+
+# entered_num = int(input("Enter any number: "))  # Enter any number: 46
+# process_nuber(entered_num, print_number_info)
+# # Entered nuber is even
+# # применим другой аргумент (для print_square_num)
+# process_nuber(entered_num, print_square_num)
+# # Square of the num is 2116
+
+
+# ПРАВИЛА РАБОТЫ С Ф-ЯМИ:
+
+# 1. Называть ф-ии исходя из выполняемых задач
+# 2. Названия ф-ий начинать с глагола
+# 3. Одна ф-ия должна выполнять одну задачу
+# 4. Не рекомендуется изменять внешние переменные
+
+# Задача:
+# 1. Создайте две переменные и присвойте им две одинаковые последовательности типа set (без копирования)
+# 2. Выведите в терминал результат сравнения этих объектов, объясните результат
+# 3. Используя оператор is сравните их, объясните результат
+# 4. Проверте есть ли определенные элементы в множестве, используя оператор in
+
+# my_set1 = {9, 15, 8, 3, 1, 4}
+# my_set2 = {1, 8, 4, 15, 9, 3}
+# print(id(my_set1))  # 2630168068832
+# print(id(my_set2))  # 2630168354080
+# print(my_set1 == my_set2)  # порядок элементов не имеет значения поэтому: True
+# # оператор is сравнивает объекты в памяти ( id этих объектов разные) резудьтат: False
+# print(my_set1 is my_set2)
+# # Два варианта проверки наличия элементов в множестве
+# print(15 in my_set1)
+# print(20 in my_set2)
+
+# if 1 not in my_set2:
+#     print('True')
+# else:
+#     print('False')
+# # False
+
+
+# ЛОЖНЫЕ ЗНАЧЕНИЯ при приведении к логическому типу дают False:
+
+# int = 0
+# float = 0.0
+# complex = 0j
+
+# Проверим...
+# print(bool(0))      # False
+# print(bool(0.0))    # False
+# print(bool(0j))     # False
+# print(bool(None))   # False
+
+# # а также пустой словарь {}, пустой список [], пустой кортеж (), пустая строка "" range(0), пустое множесто set()
+# print(bool({}))         # False
+# print(bool([]))         # False
+# print(bool(()))         # False
+# print(bool(""))         # False
+# print(bool(range(0)))   # False
+# print(bool(set()))      # False
+
+
+# ЛОГИЧЕСКИЕ ОПЕРАТОРЫ:   not and  or
+
+# Оператор <not>(НЕ) всегда возвращает значение типа <bool>, и используется в условных инструкциях <if>
+# Операторы <and>(И) и <or>(ИЛИ) являются операторами <КОРОТКОГО ЗАМЫКАНИЯ> возвращают значение одного из операндов выражения, где они применялись.
+
+# my_list = []
+# print(not my_list)      # True
+# print(not not my_list)  # False
+
+
+# my_list = [1, 2]
+# print(not my_list)      # False
+# print(not not my_list)  # True
+
+# my_list = [1, 2]
+# other_list = ['a', 'b']
+# print(my_list or other_list)  # [1, 2]
+
+# my_list = [1, 2]
+# other_list = []
+# print(not my_list and not other_list)  # False
+# -----------------------------------------------------------------------------
+
+# my_dict1 = {'Tom': 25, 'Alice': 21, 'Peter': 32}
+# my_dict2 = {'Alice': 21, 'Peter': 32, 'Tom': 25}
+
+# if my_dict1 == my_dict2:
+#     print('Словари идентичны')
+# else:
+#     print('Словари разные')
+
+# print(my_dict2 and my_dict1)
+# -----------------------------------------------------------------------------
+
+
+# ОПЕРАТОР РАСПАКОВКИ СЛОВАРЯ (**)
+
+# позволяет на основе родительского словаря создавать новый расширенный словарь:
+
+# button = {'width': 200,
+#           'text': 'Buy'}
+# red_button = {**button,
+#               'color': 'red'}
+# print(red_button)   # {'width': 200, 'text': 'Buy', 'color': 'red'}
+# print(button)       # {'width': 200, 'text': 'Buy'}   объект <button>  остается не мутированным
+# ---------------------------------------------------------------------------------------
+
+# grey_button = {'width': 200,
+#           'text': 'Buy',
+#           'color': 'grey'}
+
+# red_button = {'color': 'red',
+#               **grey_button}
+# print(red_button)       # {'color': 'grey', 'width': 200, 'text': 'Buy'}
+# print(grey_button)      # {'width': 200, 'text': 'Buy', 'color': 'grey'}
+# ---------------------------------------------------------------------------------------
+
+# grey_button = {'width': 200,
+#           'text': 'Buy',
+#           'color': 'grey'}
+
+# red_button = {**grey_button,
+#               'color': 'red'}
+# print(red_button)       # {'width': 200, 'text': 'Buy', 'color': 'red'}
+# print(grey_button)      # {'width': 200, 'text': 'Buy', 'color': 'grey'}
+
+
+# ОБЪЕДИНЕНИЕ СЛОВАРЕЙ
+
+# 1. с помощью <**>
+
+# button_info = {'text': 'Buy'}
+
+# button_style = {'color': 'yellow',
+#                 'width': 200,
+#                 'heirht': 300}
+
+# button = {**button_info,
+#           **button_style}
+
+# print(button)
+# # {'text': 'Buy', 'color': 'yellow', 'width': 200, 'heirht': 300}
+
+
+# 2. с помощью оператора <|>;
+# необходимо иметь в виду ключи второго словаря имеют приоритет, поэтому в случае одноимённых ключей в объединяемых словарях в итоговом словаре будут пары (ключ: значение) второго словаря. Оригинальные словари остаются не тронутыми.
+
+# button_info = {'text': 'Buy'}
+
+# button_style = {'color': 'yellow',
+#                 'width': 200,
+#                 'heirht': 300}
+
+# button = button_info | button_style
+
+# print(button)
+# # {'text': 'Buy', 'color': 'yellow', 'width': 200, 'heirht': 300}
+
+
+# ИНСТРУКЦИЯ DEL
+
+# my_dict = {'a': True, 'b': 10}
+# del my_dict['a']
+# # аналогичная запись удаления элемента с помощью магического метода
+# my_dict.__delitem__('b')
+# print(my_dict)              # {}
+
+# точно также инструкция del работает со строками.
+
+
+# ФОРМАТИРОВАНИЕ СТРОК С f-string
+
+# hello = 'Hello'
+# world = 'world'
+
+# greeting = f"{hello} {world}"
+# print(greeting)                 # Hello world
+
+# Пример: Сформировать и вывести строку info двумя способами в том числе используя f строку.
+
+# my_name = 'Vladimir'
+# my_hobby = 'running'
+# time = 8
+
+# # info = my_name + ' likes ' + my_hobby + ' at ' + str(time) + " o'clock "
+# info = f"{my_name} likes {my_hobby} at {time} o'clock"
+
+# print(info)
+# # Vladimir likes running at 8 o'clock
+
+# info = info.title()     # Vladimir Likes Running At 8 O'Clock
+# print(info)
+
+
+# ЛЯМБДА Ф-ИИ  -  всегда анонимные. Выглядит так:
+
+# lambda parameters: expression
+# lambda параметры: выражение
+# lambda a, b: a * b
+
+# Пример:
+
+# def greeting(greet):
+#     return lambda name: f"{greet}, {name}!"
+
+
+# mornig_greeting = greeting("Good Morning")
+# print(mornig_greeting('Vladimir'))          # Good Morning, Vladimir!
+
+# evening_greeting = greeting("Good Evening")
+# print(evening_greeting('Vladimir'))         # Good Evening, Vladimir!
