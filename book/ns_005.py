@@ -377,12 +377,12 @@ print(result)
 # среднесуточное увеличение популяции (как процент) и
 # количество дней, которые организмам будет дано на размно­жение.
 
-num_org = int(input('Введите нач. кол-во организмов: '))
-growth_num = int(input('Введите проц. роста организмов: '))
-days = int(input('Введите кол. дней наблюдения: '))
-print('День \t Кол-во')
-print('----------------------')
+# num_org = int(input('Введите нач. кол-во организмов: '))
+# growth_num = int(input('Введите проц. роста организмов: '))
+# days = int(input('Введите кол. дней наблюдения: '))
+# print('День \t Кол-во')
+# print('----------------------')
 
-for day in range(0, days + 1):
-    print(f'{day}\t{num_org:>8.2f}')
-    num_org += num_org * growth_num / 100
+# for day in range(0, days + 1):
+#     print(f'{day}\t{num_org:>8.2f}')
+#     num_org += num_org * growth_num / 100

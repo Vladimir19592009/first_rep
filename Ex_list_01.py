@@ -616,3 +616,138 @@
 
 # evening_greeting = greeting("Good Evening")
 # print(evening_greeting('Vladimir'))         # Good Evening, Vladimir!
+
+
+# ЗАДАЧА УСЛОВНЫЕ ИНСТРУКЦИИ
+
+# 1. Создайте инструкцию <route_info>, которой будет передаваться словарь
+# 2. Если в словаре есть ключ <distance> и его значение - целое число, верните строку <Distance to your distination is <distance>.
+# 3. Иначе, если есть ключи <speed> and <time>, верните строку <Distance to your distination is speed * time>
+# 4. Иначе верните строку <No distance info is available>.
+
+# def get_inf(route):
+#     if ('distsnce' in route) and (type(route['distance']) == int):
+#         return f"Distance to your distination is {route['distance']}"
+#     if ('speed' in route) and ('time' in route):
+#         return f"Distance to your distination is {route['speed'] * route['time']}"
+#     return "No distance info is available"
+
+
+# print(get_inf({'distance': 100}))
+# # No distance info is available
+# print(get_inf({'speed': 10, 'time': 5}))
+# # Distance to your distination is 50
+# print(get_inf({'speed': 10}))
+# # No distance info is available
+
+
+# ТЕРНАРНЫЙ ОПЕРАТОР (условное выражение)
+
+# Переменная(опционально) = Выражение_1 if Условие else Выражение_2
+
+# При выполнении условия if выполняется Выражение_1 если условие ложное выполняется Выражение_2. Результат может быть присвоен Переменной.
+# Тернарный оператор также применяется для вызова либо одной ф-ии либо другой в зависимости от выполнения условия if. Тогда вместо Выражения_1 и Выражения_2 будут стоять вызовы различных ф-ий.
+
+# Пример 1
+
+# my_number = 21.5
+
+# print("is int") if type(my_number) is int else print("is not int")
+# # is not int
+
+# Пример 2
+# здесь есть два вызова ф-ий (отправить изображение) и (обработать и отправить изображение).
+
+# send_img(img) if img_get['is_processed'] else process_send_img(img)
+
+# суть этого тернарного оператора: если в словаре img есть ключ <is_processed> (означает, что изображение уже обработано и его неоюходимо только отправить) вызывается ф-ия <send_img>. Если же ключ отсутствует, то вызывается другая ф-ия (обработать и отправить).
+
+# Пример 3
+
+# product_qty = 10    # кол-во продукции для продажи
+
+# print("in stock" if product_qty > 0 else "out of stock")
+# # in stock
+
+# Задача:
+# с помощью терн. оператора проверить длину строки (если длина строки больше 79 символов то вывести  сообщение "Длина строки большая", если меньше "Строка короткая")
+
+# my_str = "c помощью терн. оператора проверить длину строки (если длина строки больше 79 символов то вывести  сообщение 'Длина строки большая', если меньше 'Строка короткая')"
+
+# print("Длина строки большая" if len(my_str) > 79 else "Строка короткая")
+# # Длина строки большая
+
+
+# ЦИКЛЫ: используются для перебора элементов последовательностей (dict, list, tuple, set, range, str)
+
+# применяются два типа циклов (for ... in ...) and ( while)
+
+# for Элемент in Последовательность:
+# Тело цикла
+
+# my_list = [True, 10, 'abc', {}]     # для списков
+
+# for elem in my_list:
+#     print(elem, end=' ')
+# # True 10 abc {}
+# ------------------------------------
+
+# video_info = ('1920x1080',True, 27)     # для котежей
+
+# for elem in video_info:
+#     print(elem, end=' ')
+# # 1920x1080 True 27
+# -------------------------------------
+
+# my_object = {       # для словарей
+#     'x': 10,
+#     'y': True,
+#     'z': 'abc'
+# }
+
+# for key in my_object:
+#     print(key, my_object[key])
+# # x 10
+# # y True
+# # z abc
+# --------------------------------------
+
+# Задача 1
+# 1. Создайте ф-ию dict_to_list, которая будет конвертировать словарь в список еортежей.
+# 2. Ф-ия должна принимать словарь, а возвращать список кортежей, в каждом кортеже должны быть пары (key, value) из словаря.
+# 3. Если значение ключа - целое число, то его нужно умножить на 2 перед добавлением в кортеж.
+
+# def dict_to_list(object):
+#     list_conv = []
+#     for k, v in object.items():
+#         if type(v) is int:
+#             v = v * 2
+#         list_conv.append((k, v))
+#     return list_conv
+
+
+# print(dict_to_list({'x': 10, 'y': True, 'z': 'abc'}))
+# [('x', 20), ('y', True), ('z', 'abc')]
+# ---------------------------------------
+
+# Задача 2
+# 1. Создайте ф-ию filter_list, которая будет фильтровать список.
+# 2. У ф-ии должно быть два параметра - список и тип значения.
+# 3. Ф-ия должна вернуть новый список, в котором останутся только значения того типа, который был передан в вызове ф-ии вторым аргументом.
+# 4. Ф-ию можно будет вызывать например так: filter_list([35, True, 'abc', 10], int) и получить [35, 10]
+
+
+# def filter_list(your_list, your_type):
+#     my_list = []
+#     for val in your_list:
+#         if type(val) is your_type:
+#             my_list.append(val)
+#     return my_list
+
+
+# print(filter_list([35, True, 'abc', 10], int))
+# # [35, 10]
+# print(filter_list([35, True, 'abc', 10], str))
+# # ['abc']
+# print(filter_list([35, True, 'abc', 10], bool))
+# # [True]
