@@ -109,8 +109,8 @@
 # def drow_triangl(sise, symb):
 #     for i in range(1, sise + 1):
 #         print(symb * min(i, sise + 1 - i))
-        
-        
+
+
 # sise = int(input('Введите размер: '))
 # symb = input('Введите символ: ')
 # drow_triangl(sise, symb)
@@ -118,10 +118,31 @@
 # Задание 2
 # Напишите функцию, которая принимает произвольное количество целых чисел, и возвращает среднее арифметическое без использования встроенных функции sum() и len().
 
-def arithmetic_average(args):
-    return
+# def arithmetic_average(args):
+#     total_vol = 0
+#     for vol in args:
+#         total_vol += vol
+#     return total_vol / len(args)
 
 
+# args = [5, 8, 3, 9, 7, 10]
+# print(arithmetic_average(args))
+# # 7.0
 
-args = [5, 4, 3, 9, 7, 10]
-arithmetic_average(args)
+
+# data = [2.71, 3.14, 1.41, 1.62]
+
+# data.remove(2.71)
+# last = data.pop()
+# print(data)
+# print(last)
+
+
+# my_list = [5, 8, 10, 16, 11, 18, 4]
+# # a = len(my_list[2:])
+
+# # print(a)
+# min_num = min(my_list)
+# print(min_num)
+# max_num = max(my_list)
+# print(max_num)
