@@ -50,7 +50,7 @@
 # print(fruit_num_zip)
 # # <zip object at 0x000001B6FD781B40>
 
-# fruit_num_dict = dict(fruit_num_zip)
+# fruit_num_dict = dict(fruit_num_zip)  # или одной строкой: fruit_num_dict = dict(zip(fruits, nums))
 # print(fruit_num_dict)
 # # {'apple': 100, 'banana': 70, 'lime': 50}
 # -------------------------------------------------------------
