@@ -3,12 +3,12 @@
 # 1. Генерация одного случайного числа
 # Для генерации одного случайного целого числа в заданном диапазоне можно использовать функцию `randint()`. Например:
 
-import random
+# import random
 
 # Генерация случайного целого числа от 1 до 10 (включительно)
 
-random_number = random.randint(1, 10)
-print(random_number)
+# random_number = random.randint(1, 10)
+# print(random_number)
 
 
 # 2. Генерация нескольких случайных чисел
@@ -17,8 +17,8 @@ print(random_number)
 
 # Генерация 5 уникальных случайных чисел от 1 до 10
 
-random_numbers = random.sample(range(1, 11), 5)
-print(random_numbers)
+# random_numbers = random.sample(range(1, 11), 5)
+# print(random_numbers)
 
 
 # 3. Генерация случайных чисел с плавующей запятой
@@ -27,8 +27,8 @@ print(random_numbers)
 
 # Генерация случайного числа с плавающей запятой от 1.0 до 10.0
 
-random_float = random.uniform(1.0, 10.0)
-print(random_float)
+# random_float = random.uniform(1.0, 10.0)
+# print(random_float)
 
 # 4. Генерация случайных чисел в диапазоне с заданным шагом
 # Для этого можно использовать функцию `randrange()`:
@@ -36,8 +36,8 @@ print(random_float)
 
 # Генерация случайного числа от 1 до 10 с шагом 2 (например, 1, 3, 5, 7, 9)
 
-random_step_number = random.randrange(1, 11, 2)
-print(random_step_number)
+# random_step_number = random.randrange(1, 11, 2)
+# print(random_step_number)
 
 # Пример: генерация случайных чисел в диапазоне
 # Вот объединённый пример, который генерирует различные типы случайных чисел:
@@ -45,23 +45,168 @@ print(random_step_number)
 
 # Генерация одного случайного целого числа
 
-single_random = random.randint(1, 10)
-print(f"Случайное целое число: {single_random}")
+# single_random = random.randint(1, 10)
+# print(f"Случайное целое число: {single_random}")
 
 # Генерация массива уникальных случайных чисел
 
-unique_randoms = random.sample(range(1, 11), 5)
-print(f"Уникальные случайные числа: {unique_randoms}")
+# unique_randoms = random.sample(range(1, 11), 5)
+# print(f"Уникальные случайные числа: {unique_randoms}")
 
 # Генерация случайного числа с плавающей запятой
 
-float_random = random.uniform(1.0, 10.0)
-print(f"Случайное число c плавающей запятой: {float_random}")
+# float_random = random.uniform(1.0, 10.0)
+# print(f"Случайное число c плавающей запятой: {float_random}")
 
 # Генерация случайного числа с заданным шагом
 
-step_random = random.randrange(1, 11, 2)
-print(f"Случайное число c шагом: {step_random}")
+# step_random = random.randrange(1, 11, 2)
+# print(f"Случайное число c шагом: {step_random}")
 
 # Заключение
-# Эти примеры позволят вам начать использовать генерацию случайных чисел в Python. Если у вас есть специфические требования или вопросы о том, как использовать эти функции, дайте знать!
+# Эти примеры позволят вам начать использовать генерацию случайных чисел в Python.
+# -------------------------------------------------------------------------------------------
+
+
+# В Python сделать случайный выбор буквы английского алфавита можно так:
+# import random
+# import string
+
+# letter = random.choice(string.ascii_lowercase)  # для маленьких букв
+# print(letter)
+# Если нужны большие буквы, используйте string.ascii_uppercase, или для всех сразу — string.ascii_letters.
+
+# Чтобы выбрать несколько случайных букв (например, 6), можно использовать random.choices() — он возвращает список с нужным количеством элементов. Вот пример для 6 маленьких букв:
+# import random
+# import string
+
+# letters = random.choices(string.ascii_lowercase, k=6)
+# result = ''.join(letters)
+# print(result)
+# --------------------------------------------------------------------------------------
+
+
+# Да, для случайной выборки нескольких элементов из существующего СПИСКА удобно использовать функцию random.sample(). Она выбирает уникальные элементы, то есть без повторов.
+# Особенность: невозможно выбрать больше элементов, чем есть в списке (иначе будет ошибка).
+
+# import random
+
+# my_list = ['apple', 'banana', 'cherry', 'date', 'fig', 'grape']
+# selected = random.sample(my_list, 3)  # выбираем 3 уникальных элемента
+# print(selected)
+
+# # Если нужны элементы с повторениями, тогда можно использовать random.choices():
+# selected_with_repeats = random.choices(my_list, k=3)
+# print(selected_with_repeats)
+# -------------------------------------------------------------------------------------
+
+# Выборку из СТРОКИ делать можно почти так же, как и из списка, поскольку строка в Python — это итерируемый объект (последовательность символов).
+
+# Вот 2 варианта, как выбрать несколько случайных символов из строки.
+
+# 1. Случайная выборка без повторов — random.sample()
+
+# import random
+
+# my_string = "hello world"
+# selected = random.sample(my_string, 4)  # выбираем 4 уникальных символа
+# result = ''.join(selected)
+# print(result)
+# Важно: Если в строке повторяющиеся символы, то random.sample может выбрать одинаковые символы, если они просто стоят в разных местах строки, т.к. выбор осуществляется по позициям.
+
+# Например здесь 'l' встречается 3 раза, и random.sample может выбрать несколько разных 'l'.
+
+# 2. Случайная выборка с повторами — random.choices()
+
+# import random
+
+# my_string = "hello world"
+# selected = random.choices(my_string, k=6)  # выбираем 6 символов с повторами
+# result = ''.join(selected)
+# print(result)
+# Будут выбраны 6 символов — некоторые из них могут повторяться.
+# -------------------------------------------------------------------------------------
+
+# Чтобы делать случайный выбор ТОЛЬКО ИЗ БУКВ СТРОКИ (игнорируя пробелы и знаки препинания), можно сначала отфильтровать строку, оставив в ней лишь английские буквы, а уже потом делать выборку.
+# Вот как это сделать:
+
+# import random
+# import string
+
+# my_string = "Hello, world! 123"
+
+# Оставляем только английские буквы (прописные и строчные)
+# filtered = [ch for ch in my_string if ch in string.ascii_letters]
+
+# Теперь делаем выборку, например 5 букв с повторениями:
+# selected = random.choices(filtered, k=5)
+
+# result = ''.join(selected)
+# print(result)
+
+# Если нужна выборка без повторов (уникальные буквы), тогда:
+# selected_unique = random.sample(filtered, 5)  # 5 уникальных букв
+# print(''.join(selected_unique))
+
+# Кратко:
+# Фильтруем строку по буквам с помощью string.ascii_letters
+# Затем выбираем с помощью random.choices() или random.sample()
+# Объединяем результат в строку через ''.join()
+# --------------------------------------------------------------------------------------
+
+
+# Чтобы сделать случайную выборку КЛЮЧЕЙ ИЗ СЛОВАРЯ, можно работать с его ключами как с последовательностью. Вот как это делается:
+# 1. Выбрать один случайный ключ:
+
+# import random
+
+# my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+# random_key = random.choice(list(my_dict.keys()))
+# print(random_key)
+
+# 2. Выбрать несколько уникальных случайных ключей (без повторов):
+
+# import random
+
+# my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+# keys = list(my_dict.keys())
+# selected_keys = random.sample(keys, 2)  # например, 2 уникальных ключа
+# print(selected_keys)
+
+# 3. Выбрать несколько ключей с повторениями (если нужно)
+
+# import random
+
+# my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+# keys = list(my_dict.keys())
+# selected_keys = random.choices(keys, k=3)  # 3 ключа с возможными повторами
+# print(selected_keys)
+# ----------------------------------------------------------------------------------
+
+
+# Чтобы выбрать случайные пары (КЛЮЧ: ЗНАЧЕНИЕ) из словаря, можно работать с его элементами — это пары (ключ, значение). Вот несколько способов:
+
+# 1. Выбор нескольких уникальных пар без повторов — с random.sample()
+
+# import random
+
+# my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+# items = list(my_dict.items())  # получаем список пар (ключ, значение)
+# selected_items = random.sample(items, 2)  # выбираем 2 уникальные пары
+
+# print(selected_items)
+# Пример вывода:
+# [('b', 2), ('d', 4)]
+
+
+# 2. Выбор с возможными повторами — с random.choices()
+
+# import random
+
+# my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
+
+# items = list(my_dict.items())
+# selected_items = random.choices(items, k=3)  # выбираем 3 пары, повторы возможны
+
+# print(selected_items)
