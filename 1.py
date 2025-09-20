@@ -118,7 +118,12 @@ print(kaila_scores)
 # или
 # переменная = dict()
 
-# ОПЕРАТОРЫ:
+
+
+# ОПЕРАТОРЫ:  
+
+ 
+# (['__class__', '__class_getitem__', '__contains__', '__delattr__', '__delitem__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__getstate__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__ior__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__or__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__ror__', '__setattr__', '__setitem__', '__sizeof__', '__str__', '__subclasshook__', 'clear', 'copy', 'fromkeys', 'get', 'items', 'keys', 'pop', 'popitem', 'setdefault', 'update', 'values'])
 
 '''
 # 1. Индексирование: Позволяет получать значение по ключу:
@@ -144,7 +149,7 @@ key = my_dict.keys()
 print(key)
 # dict_keys(['a', 'b', 'c', 'd'])
 
-# .values(): Возвращает все значения (val) из словаря (без ключей) в виде списка кортежа.
+# .values(): Возвращает все значения (val) из словаря (без ключей) в виде кортежа списка .
 my_dict = {'a': 1, 'b': 2, 'c': 3, 'd': 4}
 val = my_dict.values()
 print(val)

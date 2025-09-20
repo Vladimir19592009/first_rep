@@ -477,4 +477,3 @@
 
 # second_half_average = sum(nums_random[5:10]) / (len(nums_random) / 2)
 # print(second_half_average)  # 88.2
-
